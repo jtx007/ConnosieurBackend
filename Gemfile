@@ -5,6 +5,8 @@ ruby '2.3.3'
 
 gem 'bcrypt'
 
+gem 'faker'
+
 gem 'active_model_serializers'
 
 gem 'rack-cors'
