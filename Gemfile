@@ -5,7 +5,11 @@ ruby '2.3.3'
 
 gem 'bcrypt'
 
+gem 'annotate'
+
 gem 'faker'
+
+gem 'knock'
 
 gem 'active_model_serializers'
 

@@ -3,7 +3,6 @@ module Api
 
         class SneakersController < ApplicationController
 
-
             def index
                 @sneakers = Sneaker.all
                 render json: @sneakers.limit(100)
