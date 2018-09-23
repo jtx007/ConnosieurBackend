@@ -44,9 +44,15 @@ ActiveRecord::Schema.define(version: 2018_09_21_011323) do
   end
 
   create_table "sneakers", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
+    t.string "category"
+    t.string "shoe"
     t.string "release_date"
-    t.string "style_code"
+    t.string "colorway"
+    t.string "uuid"
+    t.string "brand"
+    t.string "style_id"
+    t.string "retail_price"
     t.string "market_value"
     t.string "img_url"
     t.datetime "created_at", null: false
