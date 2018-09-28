@@ -13,4 +13,7 @@
 
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :username, :city, :age
+  has_many :sneakers
+  has_many :posts
+  has_many :comments
 end
