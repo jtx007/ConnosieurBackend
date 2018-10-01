@@ -5,7 +5,7 @@ module Api
 
             def index
                 @users = User.all
-                render json: @users
+                render json: @users, include: ['posts']
             end
 
             def create

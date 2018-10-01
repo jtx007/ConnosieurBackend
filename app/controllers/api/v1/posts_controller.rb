@@ -5,15 +5,18 @@ module Api
 
 
             def index
-                render json: Post.all
+                render json: Post.all, include: ['users']
             end
 
             def create 
+                if current_user 
                 @post = Post.new(post_params)
-                if @post.save
-                    render json: @post, status: :created
-                else
-                    render json: @post.errors, status; :unprocessed_entity
+                    if @post.save
+                        render json: @post, status: :created
+                    else
+                        render json: @post.errors, status: :unprocessed_entity
+                    
+                    end
                 end
             end
 
