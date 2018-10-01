@@ -2,7 +2,26 @@ module Api
     module V1
 
         class PostsController < ApplicationController
-            before_action :authenticate_user
+
+
+            def index
+                render json: Post.all
+            end
+
+            def create 
+                @post = Post.new(post_params)
+                if @post.save
+                    render json: @post, status: :created
+                else
+                    render json: @post.errors, status; :unprocessed_entity
+                end
+            end
+
+            private
+            def post_params
+                params.require(:post).permit(:title, :body, :user_id, :sneaker_id)
+            end
+
         end
     end
 end

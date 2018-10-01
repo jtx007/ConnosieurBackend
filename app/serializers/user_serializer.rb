@@ -12,7 +12,7 @@
 #
 
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :city, :age
+  attributes :id, :username, :city, :age, :avatarUrl
   has_many :sneakers
   has_many :posts
   has_many :comments
