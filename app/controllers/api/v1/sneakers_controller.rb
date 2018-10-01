@@ -5,7 +5,7 @@ module Api
 
             def index
                 @sneakers = Sneaker.all
-                render json: @sneakers
+                render json: @sneakers.limit(100)
             end
 
             def show

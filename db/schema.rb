@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_153121) do
+ActiveRecord::Schema.define(version: 2018_10_01_200632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2018_09_25_153121) do
     t.integer "post_id"
     t.integer "likes", default: 0
     t.integer "dislikes", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "own_sneakers", force: :cascade do |t|
+    t.integer "sneaker_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +74,13 @@ ActiveRecord::Schema.define(version: 2018_09_25_153121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatarUrl"
+  end
+
+  create_table "want_sneakers", force: :cascade do |t|
+    t.integer "sneaker_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

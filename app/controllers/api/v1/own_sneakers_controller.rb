@@ -1,0 +1,2 @@
+class OwnSneakersController < ApplicationController
+end

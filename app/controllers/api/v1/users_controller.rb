@@ -5,7 +5,7 @@ module Api
 
             def index
                 @users = User.all
-                render json: @users, include: ['posts']
+                render json: @users
             end
 
             def create
@@ -19,15 +19,15 @@ module Api
 
             def show
                 @user = User.find(params[:id])
-                render json: @user
+                render json: @user, include: ['posts', 'comments', 'owned_sneakers', 'wanted_sneakers']
             
             end
 
             def me 
                 if current_user
-                    render json: current_user
+                    render json: current_user, include: ['posts', 'comments', 'owned_sneakers', 'wanted_sneakers']
                 else
-                    render json: current_user.errors, status: :unprocessable_entity
+                    render json:{error: "Access Denied"},  status: :unprocessable_entity
                     
                 end
             end

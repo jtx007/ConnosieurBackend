@@ -15,9 +15,14 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :posts
+  
   has_many :comments
-  has_many :sneaker_users
-  has_many :sneakers, through: :sneaker_users
+
+  has_many :own_sneakers
+  has_many :owned_sneakers, through: :own_sneakers, source: :sneaker
+
+  has_many :want_sneakers
+  has_many :wanted_sneakers, through: :want_sneakers, source: :sneaker
 
   validates :username, uniqueness: true
 

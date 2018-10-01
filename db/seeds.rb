@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 Sneaker.destroy_all
+User.destroy_all
 featured_sneakers = JSON.parse(File.read('./snkr_data_copy/featured.json'))
 popular_sneakers = JSON.parse(File.read('./snkr_data_copy/most_popular.json'))
 
@@ -30,3 +31,4 @@ sneakers.each do |firstSnkr|
         img_url: firstSnkr["media"]["imageUrl"])
 end
 
+User.create(username: "James", password: "123", age: "25", city: "New York", avatarUrl: 'https://pbs.twimg.com/media/DXJKjhOX0AEUAWY.jpg' )

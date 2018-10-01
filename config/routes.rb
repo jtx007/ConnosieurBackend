@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :users
       resources :sneaker_users
       resources :comments
+      resources :own_sneakers
+      resources :want_sneakers
       resources :posts
       resources :sneakers
 

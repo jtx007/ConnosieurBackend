@@ -20,6 +20,14 @@ module Api
                 end
             end
 
+            def delete
+                if current_user
+                    @post = Post.find(params[:id])
+                    @post.destroy
+                    render json: @post, status: :gone
+                end
+            end
+
             private
             def post_params
                 params.require(:post).permit(:title, :body, :user_id, :sneaker_id)
