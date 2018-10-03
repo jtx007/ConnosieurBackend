@@ -25,7 +25,7 @@ module Api
 
             def me 
                 if current_user
-                    render json: current_user, include: ['posts', 'comments', 'owned_sneakers', 'wanted_sneakers']
+                    render json: current_user.formatted
                 else
                     render json:{error: "Access Denied"},  status: :unprocessable_entity
                     

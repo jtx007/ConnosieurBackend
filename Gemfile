@@ -9,6 +9,8 @@ gem 'annotate'
 
 gem 'faker'
 
+gem 'will_paginate'
+
 gem 'knock'
 
 gem 'active_model_serializers'

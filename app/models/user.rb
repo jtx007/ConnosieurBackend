@@ -14,7 +14,7 @@
 class User < ApplicationRecord
   has_secure_password
   
-  has_many :posts
+  has_many :posts, -> { order "created_at DESC"}
   
   has_many :comments
 
@@ -33,6 +33,20 @@ class User < ApplicationRecord
     username = request.params["auth"] && request.params["auth"]["username"]
     self.find_by(username: username)
     
+  end
+
+  def formatted
+    
+    {id: self.id,
+    username: self.username,
+    city: self.city,
+    age: self.age,
+    avatarUrl: self.avatarUrl,
+    posts: self.posts,
+    comments: self.comments,
+    wanted_sneakers: self.wanted_sneakers,
+    owned_sneakers: self.owned_sneakers}
+   
   end
 
 end
