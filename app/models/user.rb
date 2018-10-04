@@ -35,18 +35,13 @@ class User < ApplicationRecord
     
   end
 
-  def formatted
-    
-    {id: self.id,
-    username: self.username,
-    city: self.city,
-    age: self.age,
-    avatarUrl: self.avatarUrl,
-    posts: self.posts,
-    comments: self.comments,
-    wanted_sneakers: self.wanted_sneakers,
-    owned_sneakers: self.owned_sneakers}
-   
+  def want_sneaker_id(id)
+    self.want_sneakers.where(sneaker_id: id).first.id
   end
+
+  def own_sneaker_id(id)
+    self.own_sneakers.where(sneaker_id: id).first.id
+  end
+  
 
 end

@@ -5,8 +5,11 @@ module Api
 
 
             def index
-                render json: Post.all, include: ['users']
+                @posts = Post.all
+                render :index
             end
+
+            
 
             def create 
                 if current_user 

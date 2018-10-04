@@ -24,8 +24,10 @@ module Api
             end
 
             def me 
+                
                 if current_user
-                    render json: current_user.formatted
+                    @user = current_user
+                    render :me
                 else
                     render json:{error: "Access Denied"},  status: :unprocessable_entity
                     

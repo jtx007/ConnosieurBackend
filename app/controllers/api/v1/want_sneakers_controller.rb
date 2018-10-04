@@ -15,6 +15,23 @@ module Api
                 end
             end
 
+            def destroy
+                if current_user
+                    @want_sneaker = WantSneaker.find(params[:id])
+                    if @want_sneaker
+                        @want_sneaker.destroy
+                        render json: @want_sneaker, status: :accepted
+                    else
+                        render json:{error: "Does not exist"}, status: :unprocessable_entity
+                    end
+                else
+                    render json:{error: "Not logged in"}, status: :unprocessable_entity
+
+                end
+            end
+
+
+
             private
             def sneaker_params
                 params.require(:want_sneaker).permit(:user_id, :sneaker_id)
