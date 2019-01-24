@@ -10,7 +10,7 @@ module Api
                 else
                     @sneakers = Sneaker.all
                 end
-                render json: @sneakers.sample(250)
+                render json: @sneakers.sample(100)
             end
 
             def show
