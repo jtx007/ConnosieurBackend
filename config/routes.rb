@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/users/me', to: 'users#me' 
+      get '/users/me', to: 'users#me'
+      get '/users/ping', to: 'users#ping'
       resources :users
       resources :sneaker_users
       resources :comments

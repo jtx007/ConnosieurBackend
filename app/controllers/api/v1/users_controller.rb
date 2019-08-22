@@ -3,6 +3,10 @@ module Api
         class UsersController < ApplicationController
                 
 
+            def ping
+                render json: {message: "I'm awake"}
+            end 
+
             def index
                 @users = User.all
                 render json: @users
