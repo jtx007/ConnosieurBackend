@@ -5,11 +5,12 @@ ruby '2.6.4'
 
 gem 'bcrypt'
 
+
+
 gem 'annotate'
 
 gem 'faker'
 
-gem 'will_paginate'
 
 gem 'knock'
 
