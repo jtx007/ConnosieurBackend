@@ -14,11 +14,13 @@ gem 'faker'
 
 gem 'knock'
 
+gem 'will_paginate'
+
+
 gem 'active_model_serializers'
 
 gem 'rack-cors'
 
-gem 'will_paginate'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

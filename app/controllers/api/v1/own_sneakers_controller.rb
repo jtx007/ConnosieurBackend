@@ -1,6 +1,6 @@
 module Api
     module V1
-            class OwnSneakersController < ApplicationController
+        class OwnSneakersController < ApplicationController
 
 
 

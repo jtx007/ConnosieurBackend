@@ -36,16 +36,9 @@ ActiveRecord::Schema.define(version: 2018_10_01_200632) do
     t.string "title"
     t.text "body"
     t.integer "user_id"
-    t.integer "sneaker_id"
+    t.integer "sneaker_id", default: 0
     t.integer "likes", default: 0
     t.integer "dislikes", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sneaker_users", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "sneaker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

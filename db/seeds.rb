@@ -31,4 +31,4 @@ sneakers.each do |firstSnkr|
         img_url: firstSnkr["media"]["imageUrl"])
 end
 
-User.create(username: "James", password: "123", age: "25", city: "New York", avatarUrl: 'https://pbs.twimg.com/media/DXJKjhOX0AEUAWY.jpg' )
+User.create(username: "James", password: "123", age: "25", city: "New York", avatarUrl: 'https://66.media.tumblr.com/avatar_ef9c7b69b12d_128.pnj' )

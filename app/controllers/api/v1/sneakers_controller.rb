@@ -8,9 +8,11 @@ module Api
                 if !params[:filter].blank? 
                     @sneakers = Sneaker.where("LOWER(title) LIKE ? ", "%#{params[:filter].downcase}%")
                 else
-                    @sneakers = Sneaker.all
+                    @sneakers = Sneaker.all.page(params[:page]).per_page(75)
                 end
-                render json: @sneakers.sample(100)
+                render json: @sneakers
+
+
             end
 
             def show
@@ -20,7 +22,7 @@ module Api
 
             private
             def shoe_params
-                params.permit(:filter)
+                params.permit(:filter, :page)
             end
 
 
