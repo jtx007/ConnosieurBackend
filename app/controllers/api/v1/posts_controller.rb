@@ -34,7 +34,7 @@ module Api
                     @post = Post.find(params[:id])
                     @post.update(post_params)
                     @post.save
-                    render json: @post, status: :accepted
+                    render :show
                 end
             end
 
