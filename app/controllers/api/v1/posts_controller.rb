@@ -23,6 +23,21 @@ module Api
                 end
             end
 
+            def show
+                @post = Post.find(params[:id])
+                render :show
+            end
+
+
+            def update
+                if current_user
+                    @post = Post.find(params[:id])
+                    @post.update(post_params)
+                    @post.save
+                    render :show
+                end
+            end
+
             def delete
                 if current_user
                     @post = Post.find(params[:id])
@@ -31,10 +46,14 @@ module Api
                 end
             end
 
+        
+
             private
             def post_params
-                params.require(:post).permit(:title, :body, :user_id, :sneaker_id)
+                params.require(:post).permit(:title, :body, :user_id, :sneaker_id, :likes, :dislikes)
             end
+
+            
 
         end
     end

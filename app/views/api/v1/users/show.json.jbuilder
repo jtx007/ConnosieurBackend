@@ -1,4 +1,3 @@
-    json.id @user.id
     json.username @user.username
     json.city @user.city
     json.age @user.age
@@ -37,17 +36,3 @@
         json.owned_sneaker_id @user.own_sneaker_id(sneaker.id) 
     end
     
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
