@@ -8,8 +8,15 @@ module Api
             end 
 
             def index
+                if !params[:username].blank?
+                    @user = User.find_by_username(params[:username])
+                    render :show
+                else
+
                 @users = User.all
                 render json: @users
+                end
+
             end
 
             def create
@@ -21,10 +28,7 @@ module Api
                 end
             end
 
-            def show
-                @user = User.find(params[:id])
-                render :me
-            end
+            
 
             def me 
                 
@@ -41,7 +45,7 @@ module Api
             private 
 
             def user_params
-            params.require(:user).permit(:username, :password, :age, :city, :avatarUrl)
+            params.require(:user).permit(:username, :password, :age, :city, :avatarUrl, :bio)
             end
         end
 

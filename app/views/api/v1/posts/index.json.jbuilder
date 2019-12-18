@@ -3,6 +3,7 @@ json.array! @posts do |post|
     json.title post.title 
     json.body post.body
     json.user post.user.username
+    json.avatar post.user.avatarUrl
     json.user_id post.user.id
     json.sneaker post.sneaker_id
     json.likes post.likes

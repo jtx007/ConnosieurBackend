@@ -4,11 +4,14 @@ module Api
 
         class CommentsController < ApplicationController
 
+
+        
+
             def create
                 if current_user
                     @comment = Comment.new(comment_params)
                     if @comment.save 
-                        render json: @comment, status: :created
+                        render :show, status: :created
                     else
                         render json:{error: "Not created"}, status: :unprocessable_entity
                     end
