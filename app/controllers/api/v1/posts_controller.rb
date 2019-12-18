@@ -15,7 +15,7 @@ module Api
                 if current_user 
                 @post = Post.new(post_params)
                     if @post.save
-                        render json: :show, status: :created
+                        render :show, status: :created
                     else
                         render json: @post.errors, status: :unprocessed_entity
                     
