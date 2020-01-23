@@ -29,7 +29,7 @@ The api will now be served on http://localhost:3000/.
 
 Here is a visualization of the current database schema. This is subject to change as time goes on
 
-![Database Schema](/assets/ConnosieurDB.png)
+![Database Schema](/app/assets/ConnosieurDB.png)
 
 ## Tech Stack
 - Ruby v2.6.4
