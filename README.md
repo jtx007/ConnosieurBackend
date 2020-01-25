@@ -1,6 +1,8 @@
 
 # Connosieur V2 API
 
+## *Project is deployed at the link [here](https://connosieurfrontend.herokuapp.com/)*
+
 This application was built with sneaker enthusiasts in mind. It's platform for individuals to find their favorite sneakers and show them off on their individual profiles. This is the backend repo, for the frontend repo click the link [here](https://github.com/jtx007/Connosieur)
 
 ## Getting Started
