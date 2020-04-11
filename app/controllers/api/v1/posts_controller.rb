@@ -38,12 +38,20 @@ module Api
                 end
             end
 
-            def delete
+            def destroy
                 if current_user
                     @post = Post.find(params[:id])
-                    @post.destroy
-                    render json: @post, status: :gone
+                    if @post
+                        @post.destroy
+                        render json:{message:"post is deleted"}, status: :gone
+                    else
+                        render json:{error: "Does not exist"}, status: :unprocessable_entity
+                    end
+                else 
+                    render json:{error: "Not logged in"}, status: :unprocessable_entity
+
                 end
+
             end
 
         
