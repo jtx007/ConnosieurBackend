@@ -21,6 +21,16 @@ module Api
 
             end
 
+            def destroy
+                @comment = Comment.find(params[:id])
+                if @comment
+                    @comment.destroy
+                    render json:{"message": "Comment deleted"}, status: :gone
+                else
+                    render json:{error: "Comment not found"}, status: :unproccessable_entity
+                end
+            end
+
 
         
 
