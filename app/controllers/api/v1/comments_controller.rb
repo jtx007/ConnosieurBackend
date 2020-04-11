@@ -22,13 +22,18 @@ module Api
             end
 
             def destroy
+                if current_user    
                 @comment = Comment.find(params[:id])
-                if @comment
-                    @comment.destroy
-                    render json:{"message": "Comment deleted"}, status: :gone
+                    if @comment
+                        @comment.destroy
+                        render json:{"message": "Comment deleted"}, status: :gone
+                    else
+                        render json:{error: "Comment not found"}, status: :unproccessable_entity
+                    end
                 else
-                    render json:{error: "Comment not found"}, status: :unproccessable_entity
+                    render json:{error: "Not Authorized for this action"}, status: :unproccessable_entity
                 end
+                
             end
 
 
